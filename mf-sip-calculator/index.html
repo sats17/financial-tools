@@ -16,11 +16,11 @@
             const inflationRate = parseFloat(document.getElementById("inflation_rate").value);
             const yearsOfInvestment = parseInt(document.getElementById("years_of_investment").value);
             
-            const [returns, realReturns, realReturnsAfterInflation] = sipCalculator(expenseRatio, monthlyInvestment, returnPercentage, inflationRate, yearsOfInvestment);
+            const [finalReturns, expenseRatioSpent, finalReturnsAfterInflation] = sipCalculator(expenseRatio, monthlyInvestment, returnPercentage, inflationRate, yearsOfInvestment);
             
-            document.getElementById("returns").innerText = `Returns: ${returns.toFixed(2)}`;
-            document.getElementById("real_returns").innerText = `Real Returns: ${realReturns.toFixed(2)}`;
-            document.getElementById("real_returns_after_inflation").innerText = `Real Returns After Inflation: ${realReturnsAfterInflation.toFixed(2)}`;
+            document.getElementById("final_returns").innerText = `Amount you will get in hand after years of investment(Expense ratio deducted): ${finalReturns.toFixed(2)}`;
+            document.getElementById("expense_ratio_amount").innerText = `Total amount spent on expense ratio: ${expenseRatioSpent.toFixed(2)}`;
+            document.getElementById("final_returns_after_inflation").innerText = `Final Returns After Adjusting Inflation: ${finalReturnsAfterInflation.toFixed(2)}`;
         }
     </script>
     <style>
@@ -106,9 +106,9 @@
         <input type="submit" value="Submit">
         
         <div id="results">
-            <p id="returns"></p>
-            <p id="real_returns"></p>
-            <p id="real_returns_after_inflation"></p>
+            <p id="final_returns"></p>
+            <p id="expense_ratio_amount"></p>
+            <p id="final_returns_after_inflation"></p>
         </div>
     </form>
 </body>
