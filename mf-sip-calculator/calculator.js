@@ -1,6 +1,6 @@
 function sipCalculator(expenseRatio, monthlyInvestment, returnsPercentage, inflationRate, years) {
   const monthlyRateOfReturn = (1 + returnsPercentage / 100) ** (1 / 12) - 1;
-  const dailyExpenseRatio = expenseRatio / 100 / 365;
+  const dailyExpenseRatio = expenseRatio / 365;
   const n = years * 12;
   let futureValue = 0;
   
